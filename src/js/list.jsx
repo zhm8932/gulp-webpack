@@ -1,6 +1,6 @@
 let data = [
     {
-        title:'Node.js',des:'JS服务端运行环境!'
+        title:'Node.js',des:'JS服务端运行环境!!'
     },{
         title:'React.js',des:'React是Facebook开发的一款JS库!'
     }
@@ -11,11 +11,13 @@ let data = [
 ]
 const React = require('react');
 const ReactDOM = require('react-dom');
+const moduleb = require('./moduleB')
 
 let List = React.createClass({
     render:function () {
         return<ul>
             <h2>JS框架</h2>
+            <h4>{moduleb.str}</h4>
             {
                 data.map(function (item,i) {
                     return <li key={i}>{item.title}

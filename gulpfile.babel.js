@@ -74,9 +74,10 @@ gulp.task('watch',function () {
     })
     gulp.watch(paths.sass,['sass'])
     // gulp.watch(paths.js,['js'])
-    gulp.watch([paths.js,paths.jsx],['pack'])
+    gulp.watch([paths.js,paths.jsx,paths.sass],['pack'])
     gulp.watch(['./gulpfile.babel.js','./webpack.config.js'],['develop'])
     gulp.watch('dist/js/*.js').on('change',browserSync.reload);
+    gulp.watch(paths.sass).on('change',browserSync.reload);
     gulp.watch('views/*.html').on('change',browserSync.reload);
 
 })
