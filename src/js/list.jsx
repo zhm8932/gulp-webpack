@@ -1,6 +1,6 @@
 let data = [
     {
-        title:'Node.js',des:'JS服务端运行环境!!'
+        title:'Node.js',des:'JS服务端运行环境!'
     },{
         title:'React.js',des:'React是Facebook开发的一款JS库!'
     }
