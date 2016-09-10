@@ -4,17 +4,25 @@ var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 var clean = require('gulp-clean');
 var browserSync = require('browser-sync');
-// var babel = require('gulp-babel');
-import gutil from 'gulp-util';
-import babel from 'gulp-babel';
-import webpack from 'webpack';
-import webpackConfig from './webpack.config.js';
 
-console.log("webpackConfig:",webpackConfig)
+var nodemon=require('gulp-nodemon') ;
+var gutil=require('gulp-util') ;
+var babel=require('gulp-babel') ;
+var webpack=require('webpack') ;
+var webpackConfig=require('./webpack.config.js') ;
 
+// import gutil from 'gulp-util';
+// import babel from 'gulp-babel';
+// import webpack from 'webpack';
+// import webpackConfig from './webpack.config.js';
+
+
+// console.log("webpackConfig:",webpackConfig)
+console.log("修改重启测试！")
 var paths = {
     sass:'./src/sass/**/*.scss',
     js:'./src/js/**/*.js',
+    jsx:'./src/js/**/*.jsx',
 }
 
 gulp.task('clean',function () {
@@ -66,14 +74,27 @@ gulp.task('watch',function () {
     })
     gulp.watch(paths.sass,['sass'])
     // gulp.watch(paths.js,['js'])
-    gulp.watch(paths.js,['pack'])
+    gulp.watch([paths.js,paths.jsx],['pack'])
+    gulp.watch('./gulpfile.babel.js',['develop'])
     gulp.watch('dist/js/*.js').on('change',browserSync.reload);
     gulp.watch('views/*.html').on('change',browserSync.reload);
 
 })
 
+gulp.task('develop',function () {
+    nodemon({
+        script:'gulpfile.babel.js',
+        ext:'html js',
+        // env: { 'NODE_ENV': 'development' }
+    }).on('restart',function () {
+        console.log('重启restart gulpfile.babel.js')
+    })
+})
 gulp.task('build',['sass','pack'],function () {
     console.log("开始编译")
+    console.log("开始编译")
+
+
 })
 gulp.task('default',['build','watch'],function () {
     console.log('default')
