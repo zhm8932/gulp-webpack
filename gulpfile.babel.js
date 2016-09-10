@@ -75,7 +75,7 @@ gulp.task('watch',function () {
     gulp.watch(paths.sass,['sass'])
     // gulp.watch(paths.js,['js'])
     gulp.watch([paths.js,paths.jsx],['pack'])
-    gulp.watch('./gulpfile.babel.js',['develop'])
+    gulp.watch(['./gulpfile.babel.js','./webpack.config.js'],['develop'])
     gulp.watch('dist/js/*.js').on('change',browserSync.reload);
     gulp.watch('views/*.html').on('change',browserSync.reload);
 
@@ -91,10 +91,7 @@ gulp.task('develop',function () {
     })
 })
 gulp.task('build',['sass','pack'],function () {
-    console.log("开始编译")
-    console.log("开始编译")
-
-
+    console.log("第一次打包结束")
 })
 gulp.task('default',['build','watch'],function () {
     console.log('default')

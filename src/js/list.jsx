@@ -1,8 +1,8 @@
 let data = [
     {
-        title:'Node.js',des:'JS服务端运行环境!!!'
+        title:'Node.js',des:'JS服务端运行环境!!'
     },{
-        title:'React.js',des:'React是Facebook开发的一款JS库!!!!'
+        title:'React.js',des:'React是Facebook开发的一款JS库!'
     }
     ,{
         title:'Vue.js',des:'Vue.js 是一个基于 MVVM 模型的 web 库。通过双向数据绑定连接View和Model层'
@@ -27,4 +27,4 @@ let List = React.createClass({
     }
 });
 
-module.exports =List
+module.exports =List;
