@@ -36,6 +36,7 @@ var config = {
         path:path.join(__dirname,'dist/js'),
         filename:"[name].js",
         chunkFilename:"[chunkhash].js",
+        publicPath: "./"                //html引用路径，在这里是本地地址。
         // publicPath:'dist/js'
     },
     module:{
@@ -52,6 +53,12 @@ var config = {
             test: /\.scss$/,
             loader: ExtractTextPlugin.extract('style', 'css!sass'),
             // loaders: ['style', 'css', 'sass'] ////.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
+        },{
+            test: /\.(png|jpg)$/,
+            loader: 'url-loader?limit=50000&name=../images/[name].[hash].[ext]',  // //url-loader处理图片URL,如果图片小于limit值直接生成`base64` 格式的`dataUrl`,否则输出图片,name参数指定输出目录和图片名
+            // loader: "url?limit=8192?name=../images/[hash:8][name].[ext]"  //limit参数，代表如果小于大约50k则会自动帮你压缩base64编码的图片
+            // loader: "url?limit=50000?name=../images/[hash:8].[name].[ext]"  //limit参数，代表如果小于大约50k则会自动帮你压缩base64编码的图片
+            // loader: 'file-loader?name=../images/[hash:8].[name].[ext]' //保持图片原路径
         }]
     },
     plugins:[

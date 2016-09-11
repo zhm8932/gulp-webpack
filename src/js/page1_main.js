@@ -5,7 +5,7 @@ import moment from 'moment';
 import moduleA from './moduleA'
 
 require('../sass/page1.scss');
-require('../sass/index.scss');
+require('../sass/global.scss');
 //-- import moment from 'moment/min/moment-with-locales.min.js';
 var str = 'Hello world!!11111';
 let temp = 'es6声明变量';

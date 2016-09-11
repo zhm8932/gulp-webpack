@@ -53,7 +53,7 @@ gulp.task("pack",function(callback) {
     devCompiler.run(function(err, stats) {
         if(err) throw new gutil.PluginError("webpack:build-js", err);
         gutil.log("[webpack]", stats.toString({
-            colors: true
+            colors: true,
         }));
         callback();
     });
@@ -69,14 +69,18 @@ gulp.task("pack",function(callback) {
 gulp.task('watch',function () {
     browserSync.init({
         port: 8080,
+        files: "dist/**", //监听整个项目
+        open: "external",
         server:'./',
-        proxy: ""
+        proxy: "",
+        index: 'views/index.html'  //能指定打开/view/下的指定文件
     })
     gulp.watch(paths.sass,['sass'])
     // gulp.watch(paths.js,['js'])
     gulp.watch([paths.js,paths.jsx,paths.sass],['pack'])
     gulp.watch(['./gulpfile.babel.js','./webpack.config.js'],['develop'])
     gulp.watch('dist/js/*.js').on('change',browserSync.reload);
+    gulp.watch('dist/style/*.css').on('change',browserSync.reload);
     gulp.watch(paths.sass).on('change',browserSync.reload);
     gulp.watch('views/*.html').on('change',browserSync.reload);
 
