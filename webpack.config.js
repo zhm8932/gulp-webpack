@@ -48,9 +48,7 @@ var config = {
                 //添加两个presets，使用这两种presets处理js或jsx文件
                 presets:['es2015','react']
             }
-        },{
-            // test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') ////.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
-            test: /\.scss$/,
+        },{test: /\.scss$/,
             loader: ExtractTextPlugin.extract('style', 'css!sass'),
             // loaders: ['style', 'css', 'sass'] ////.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
         },{
