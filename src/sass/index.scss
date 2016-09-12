@@ -1,14 +1,39 @@
+@font-face {
+  font-family:'PingHei-light';
+  src: url(../fonts/PingHei-light.woff),
+       url('../fonts/PingHei-light.eot'),    //.EOT，适用于Internet Explorer 4.0+
+       url('../fonts/PingHei-light.ttf') format("truetype")    //.TTF或.OTF，适用于Firefox 3.5、Safari、Opera
+
+}
+@font-face {
+  font-family: 'appleicons_text';
+  src: url('../fonts/appleicons_text.woff');
+}
+@font-face {
+  font-family: 'glyphicons-halflings-regular';
+  src: url('../fonts/glyphicons-halflings-regular.woff');
+}
+@font-face {
+  font-family: 'HanHei-SC-semibold';
+  src:url('../fonts/HanHei-SC-semibold.woff')
+}
+p{font-family: PingHei-light;font-size: 30px;color: #ffffff;}
+
 .content{
   color: #FFFFFF;font-size: 18px;padding:20px;
+  font-family: appleicons_text;font-size: 20px;
+}
+.main{
+  font-family: HanHei-SC-semibold;font-size: 20px;
 }
 .box{
-
+  h3{font-family: glyphicons-halflings-regular;font-size: 25px; color: #ffffff}
   figure{
     width: 600px;height: 300px;
     background-image: url("../images/138328177.jpg");
   }
   aside{
     width: 600px;height: 300px;
-    background-image: url("../images/001.jpg");
+    background: url("../images/001.jpg") no-repeat;
   }
 }

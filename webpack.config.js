@@ -56,6 +56,9 @@ var config = {
             loader: 'url-loader?limit=50000&name=../images/[name].[hash].[ext]',  // //url-loader处理图片URL,如果图片小于limit值直接生成`base64` 格式的`dataUrl`,否则输出图片,name参数指定输出目录和图片名
             // loader: "url?limit=8192?name=../images/[hash:8][name].[ext]"  //limit参数，代表如果小于大约50k则会自动帮你压缩base64编码的图片
             // loader: 'file-loader?name=../images/[hash:8].[name].[ext]' //保持图片原路径
+        },{
+            test:/\.(woff|eot|ttf)$/,
+            loader:'url?limit=100000&name=../fonts/[name].[ext]'
         }]
     },
     plugins:[
