@@ -4,7 +4,7 @@ import $ from "jquery";
 
 npm install
 
-gulp
+npm start
 
 
 1.1 gulp 入门基础
