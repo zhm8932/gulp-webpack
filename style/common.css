@@ -1,0 +1,10 @@
+header {
+  border: 5px solid #ff4642;
+  padding: 10px;
+  background: #FFFFFF; }
+
+body {
+  width: 660px;
+  margin: 0 auto;
+  background: #1b92ff;
+  font-size: 14px; }

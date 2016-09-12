@@ -13,10 +13,12 @@ let temp = 'es6声明变量';
 console.log(utils)
 console.log(str)
 console.log(temp)
+console.log(temp)
+console.log(temp)
 console.log(moduleA.str)
 
 console.log(utils.add(3,10))
-
+console.log('111111111122111111')
 
 let time = moment().locale('zh-cn').format('LLLL')
 console.log('引入jquery:',time)
